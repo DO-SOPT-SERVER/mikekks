@@ -51,12 +51,10 @@ public class HealthCheckController {
 
     @GetMapping("/v7")
     public HealthCheckResponseDtoV2 healthCheck7(){
-        HealthCheckResponseDtoV2 h = HealthCheckResponseDtoV2.builder()
+        return HealthCheckResponseDtoV2.builder()
                 .code("200")
                 .status("OK")
                 .success(true)
                 .build();
-
-        return h;
     }
 }
