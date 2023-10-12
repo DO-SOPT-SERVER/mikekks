@@ -4,7 +4,7 @@ import lombok.*;
 
 @Getter
 @Builder
-@AllArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class HealthCheckResponseDtoV2 {
     private String code;
     private String status;
