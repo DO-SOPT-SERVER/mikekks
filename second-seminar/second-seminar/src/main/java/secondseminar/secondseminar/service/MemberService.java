@@ -11,6 +11,7 @@ import secondseminar.secondseminar.domain.SOPT;
 import secondseminar.secondseminar.dto.request.MemberCreateRequest;
 import secondseminar.secondseminar.dto.request.MemberProfileUpdateRequest;
 import secondseminar.secondseminar.dto.response.MemberGetResponse;
+import secondseminar.secondseminar.exception.ErrorMessage;
 import secondseminar.secondseminar.repository.MemberJpaRepository;
 import secondseminar.secondseminar.repository.MemberRepository;
 
@@ -29,7 +30,7 @@ public class MemberService {
 
     public MemberGetResponse getMemberByIdV2(Long id) {
         return MemberGetResponse.of(memberJpaRepository.findById(id).orElseThrow(
-                () -> new EntityNotFoundException("존재하지 않는 회원입니다.")));
+                () -> new EntityNotFoundException(ErrorMessage.ERROR_NOT_FOUND.getMessage())));
     }
 
     public MemberGetResponse getMemberByIdV3(Long id) {
